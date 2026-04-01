@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="Project page for motion forecasting research (replace with your abstract).">
-  <meta name="keywords" content="motion forecasting, trajectory prediction">
+        content="Dense point trajectories as visual tokens for behavior; diffusion transformer for trajectory forecasting; large-scale animal video benchmark.">
+  <meta name="keywords" content="motion forecasting, trajectory prediction, point tracks, diffusion, animals in the wild">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Motion Forecasting</title>
+  <title>Forecasting Motion in the Wild</title>
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
         rel="stylesheet">
@@ -18,7 +18,7 @@
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/favicon.svg">
+  <link rel="icon" type="image/png" href="./static/images/favicon.png">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
@@ -36,7 +36,7 @@
       <span aria-hidden="true"></span>
     </a>
   </div>
-  <div class="navbar-menu">
+  <!-- <div class="navbar-menu">
     <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
       <a class="navbar-item" href="https://github.com/motion-forecasting" title="Organization on GitHub">
       <span class="icon">
@@ -44,7 +44,7 @@
       </span>
       </a>
     </div>
-  </div>
+  </div> -->
 </nav>
 
 
@@ -53,60 +53,57 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Motion Forecasting</h1>
+          <h1 class="title is-1 publication-title">Forecasting Motion in the Wild</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="#">First Author</a><sup>1</sup>,</span>
+              <a href="https://neerja.me/">Neerja Thakkar</a><sup>1,2</sup>,</span>
             <span class="author-block">
-              <a href="#">Second Author</a><sup>1</sup></span>
+              <a href="https://shiry.ttic.edu/">Shiry Ginosar*</a><sup>3</sup>,</span>
+            <span class="author-block">
+              <a href="https://jacobcwalker.com/">Jacob C Walker</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://people.eecs.berkeley.edu/~malik/">Jitendra Malik*</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=IUZ-7_cAAAAJ&amp;hl=en">João Carreira*</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="http://www.carldoersch.com/">Carl Doersch*</a><sup>2</sup></span>
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>Your Affiliation</span>
+            <span class="author-block"><sup>1</sup>UC Berkeley,</span>
+            <span class="author-block"><sup>2</sup>Google DeepMind,</span>
+            <span class="author-block"><sup>3</sup>Toyota Technological Institute at Chicago</span>
           </div>
+          <p class="is-size-6 publication-authors" style="margin-top: 0.35rem;"><sup>*</sup> equal advising contribution</p>
 
           <div class="column has-text-centered">
             <div class="publication-links">
               <span class="link-block">
-                <a href="#"
-                   title="Set Paper URL in index.html"
-                   class="external-link button is-normal is-rounded is-dark">
+                <span class="button is-normal is-rounded is-light" title="Coming soon">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                   </span>
                   <span>Paper</span>
-                </a>
+                </span>
               </span>
               <span class="link-block">
-                <a href="#"
-                   title="Set arXiv URL in index.html"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
-              <span class="link-block">
-                <a href="#"
-                   title="Set video URL in index.html"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-youtube"></i>
-                  </span>
-                  <span>Video</span>
-                </a>
-              </span>
-              <span class="link-block">
-                <a href="https://github.com/motion-forecasting"
-                   class="external-link button is-normal is-rounded is-dark">
+                <span class="button is-normal is-rounded is-light" title="Coming soon">
                   <span class="icon">
                       <i class="fab fa-github"></i>
                   </span>
                   <span>Code</span>
-                  </a>
+                </span>
+              </span>
+              <span class="link-block">
+                <span class="button is-normal is-rounded is-light" title="Coming soon">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>MammalMotion Data</span>
+                </span>
               </span>
             </div>
+            <p class="is-size-7 has-text-grey" style="margin-top: 0.75rem;">Code and data coming soon.</p>
 
           </div>
         </div>
@@ -115,16 +112,167 @@
   </div>
 </section>
 
+<!-- MP4s in static/videos/. Carousel clips: model-results-*, diverse-*, motion-prompt-*, ood-*, stable-diffusion-*, baseline-comp-*, training-data-*. Copy a full <div class="item">…</div> to add slides. -->
+
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
+      <video id="intro-clip" autoplay muted loop playsinline height="100%">
         <source src="./static/videos/teaser.mp4"
                 type="video/mp4">
       </video>
       <h2 class="subtitle has-text-centered">
-        One-line summary of your method—replace this text after adding <code>static/videos/teaser.mp4</code>.
+        We propose dense point trajectories as a structured mid-level representation for motion generation in the wild. 
+        From a single image and short history, our diffusion transformer forecasts future motion. 
       </h2>
+    </div>
+  </div>
+</section>
+
+<!-- 
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Project video</h2>
+        <p class="content has-text-grey is-size-6" style="margin-bottom: 1rem;">
+          Hosted on YouTube (not in the repo). Replace <code>VIDEO_ID</code> below with your embed ID.
+        </p>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/VIDEO_ID?rel=0&amp;showinfo=0"
+                  title="Project overview video"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container is-max-widescreen">
+      <h2 class="title is-3 has-text-centered">Results from our model</h2>
+      <p class="subtitle is-6 section-prose-wide">
+        Results from our model across many species and behaviors. 
+        Some species are quite rare in our dataset: the polar bear is only present in 0.31% of our ~300 hours of training data, the caribou in 0.025%, the alpaca in 0.5%, and the fossa in 0.14%.
+      </p>
+      <div id="carousel-model" class="carousel results-carousel results-carousel-featured">
+        <div class="item">
+          <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/results/caribou.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/results/elk.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/results/jaguar_rolling.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/results/cheetah.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/results/buffalo.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/results/black_rhino.mp4" type="video/mp4">
+          </video>
+            </div>
+        <div class="item">
+          <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/results/lion_mating.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/results/hare.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/results/fossa.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/results/lion.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/results/alpaca.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/results/jaguar_grooming.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/results/snow_leopard.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-widescreen">
+      <h2 class="title is-3 has-text-centered">Diverse samples</h2>
+      <p class="subtitle is-6 section-prose-wide">
+        We condition with the same initial frame and short motion history, but sample from our stochastic diffusion model with different random seeds, resulting in slightly different motion forecasts. 
+      </p>
+      <div id="carousel-diverse" class="carousel results-carousel">
+        <div class="item">
+          <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/random_seeds/eskimo_dog.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/random_seeds/polar_bear.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/random_seeds/jaguar.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/random_seeds/tapir.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/random_seeds/hamster.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/random_seeds/bulldog.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/random_seeds/caribou.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -132,30 +280,171 @@
 
 <section class="hero is-light is-small">
   <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-result-1">
-          <video poster="" id="result-1" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/result-1.mp4"
-                    type="video/mp4">
+    <div class="container is-max-widescreen">
+      <h2 class="title is-3 has-text-centered">Direction prompting</h2>
+      <p class="subtitle is-6 section-prose-wide">
+        We can optionally condition our forecasts on a global 2D (x,y) motion vector. All results before this section were generated without this prompting.
+      </p>
+      <div id="carousel-motion-prompt" class="carousel results-carousel">
+        <div class="item">
+          <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/motion_prompting/elk.mp4" type="video/mp4">
           </video>
         </div>
-        <div class="item item-result-2">
-          <video poster="" id="result-2" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/result-2.mp4"
-                    type="video/mp4">
+        <div class="item">
+          <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/motion_prompting/hare.mp4" type="video/mp4">
           </video>
         </div>
-        <div class="item item-result-3">
-          <video poster="" id="result-3" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/result-3.mp4"
-                    type="video/mp4">
+        <div class="item">
+          <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/motion_prompting/bison.mp4" type="video/mp4">
           </video>
         </div>
-        <div class="item item-result-4">
-          <video poster="" id="result-4" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/result-4.mp4"
-                    type="video/mp4">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-widescreen">
+      <h2 class="title is-3 has-text-centered">Out-of-distribution generalization</h2>
+      <p class="subtitle is-6 section-prose-wide">
+        Our dataset primarily consists of mammals, but we find that our model generalizes beyond this to other animals and even robots.
+
+        A couple of these examples were found in our validation set, but most are from other sources.
+      </p>
+      <div id="carousel-ood" class="carousel results-carousel">
+        <div class="item">
+          <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/OOD/flamingo.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/OOD/butterfly.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/OOD/ostrich.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/OOD/lego_robot.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/OOD/bicycle.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/OOD/penguin.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container is-max-widescreen">
+      <h2 class="title is-3 has-text-centered">Comparison to Stable Diffusion</h2>
+      <p class="subtitle is-6 section-prose-wide">
+        We prompt <a href="https://stablediffusionweb.com/" target="_blank" rel="noopener">Stable Video Diffusion</a> with images from our dataset. 
+        We find that the model especially struggles on species that are rarer (at least in our dataset, since the distribution of Stable Video Diffusion's training data is unknown), failing to model consistent morphologies and realistic animal behavior. 
+      </p>
+      <div id="carousel-stable-diffusion" class="carousel results-carousel">
+        <div class="item">
+          <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/stable_diffusion/hare.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/stable_diffusion/elk.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/stable_diffusion/black_rhino.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/stable_diffusion/bison.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-widescreen">
+      <h2 class="title is-3 has-text-centered">Comparisons to baselines</h2>
+      <p class="subtitle is-6 section-prose-wide">
+       We compare our method to baselines: ground-truth constant velocity, and <a href="https://homangab.github.io/track2act/" target="_blank">Track2Act</a> trained on our full dataset. 
+
+       In addition to architectural differences, baselines do not model occlusion. Raw point tracking outputs can have inaccurate coordinates for occluded points, so training without proper occlusion handling leads to some of the artifacts seen in the Track2Act results, such as in the bison and the horse. 
+       
+       We give our learned baselines the advantage of training on our camera-stabilized data, even though the original methods do not. 
+
+       For Track2Act and our method, which are both stochastic, we show results using the same random seed.
+      </p>
+      <div id="carousel-baselines" class="carousel results-carousel">
+        <div class="item">
+          <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/baselines/jaguar.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/baselines/impala.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/baselines/bison.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/baselines/horse.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/baselines/elk.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/baselines/hare.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/baselines/polar_bear.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/baselines/ostrich.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/baselines/black_rhino.mp4" type="video/mp4">
           </video>
         </div>
       </div>
@@ -165,70 +454,164 @@
 
 
 <section class="section">
-  <div class="container is-max-desktop">
+  <div class="container is-max-widescreen">
+    <h2 class="title is-3 has-text-centered">Method</h2>
+    <div class="columns is-centered">
+      <div class="column is-12 content has-text-justified">
+        <p>
+          Built upon a diffusion transformer (DiT) architecture, our model treats each point track as a token augmented with local visual context from frozen DINOv3 features to capture semantic priors about animal parts. We explicitly incorporate occlusion handling within our track tokens, allowing the model to reason about visibility. <br>
+          Our model takes as input the diffusion timestep and—optionally, via dropout training—a 2D global displacement vector through adaptive layer norm (AdaLN). The training objective utilizes a diffusion process that minimizes an L1 loss to denoise reparameterized point velocities and occlusions. This parameterization focuses the learning signal on motion dynamics rather than absolute coordinates, enabling our model to generate diverse, physically plausible futures from short motion histories. <br>
+        </p>
+        <figure class="has-text-centered" style="margin-top: 1.5rem;">
+          <img src="./static/images/method.png"
+               alt="Overview of our method."
+               style="max-width: 100%; height: auto; border-radius: 8px;">
+          
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section has-background-light" id="training-data-section">
+  <div class="container is-max-widescreen">
+    <h2 class="title is-3 has-text-centered">Training data</h2>
+    <p class="subtitle is-6 section-prose-wide">
+      A critical component of our method lies in curating MammalMotion, a large-scale dataset of animal motion. <br>
+
+      Starting with the <a href="https://mammal-net.github.io/" target="_blank" rel="noopener">MammalNet dataset</a>, we detect shots (see our paper to learn about our novel point-tracking based shot detection algorithm) and then detect and segment animals within each shot.
+
+      We track points, querying within animal segmentation masks, and then use a homography-based camera stabilization to isolate animal motions from pixels. 
+    </p>
+    <div id="carousel-training" class="carousel results-carousel results-carousel-training">
+      <div class="item">
+        <video autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/data/lion.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="item">
+        <video autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/data/zebra.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="item">
+        <video autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/data/gazelles.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="item">
+        <video autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/data/elaphant_and_lion.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="item">
+        <video autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/data/lioness.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="item">
+        <video autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/data/zebra_aerial.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="item">
+        <video autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/data/elephant_baby.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="item">
+        <video autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/data/zebra_eating.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="abstract">
+  <div class="container is-max-widescreen">
     <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
+      <div class="column is-12">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Replace this paragraph with the first part of your abstract: problem, setting, and what you propose.
-          </p>
-          <p>
-            Add more paragraphs as needed (method, experiments, takeaway). The Nerfies-style layout supports
-            multiple blocks here.
+            Visual intelligence requires anticipating the future behavior of agents, yet vision systems lack a general representation for motion and behavior. We propose dense point trajectories as visual tokens for behavior, a structured mid-level representation that disentangles motion from appearance and generalizes across diverse non-rigid agents, such as animals in-the-wild.
+            Building on this abstraction, we design a diffusion transformer that models unordered sets of trajectories and explicitly reasons about occlusion, enabling coherent forecasts of complex motion patterns.
+            To evaluate at scale, we curate over 300 hours of unconstrained animal video with robust shot detection and camera-motion compensation. Experiments show that forecasting trajectory tokens achieves category-agnostic, data-efficient prediction, outperforms state-of-the-art baselines, and generalizes to rare species and morphologies, providing a foundation for predictive visual intelligence in the wild.
           </p>
         </div>
-      </div>
-    </div>
-
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/VIDEO_ID?rel=0&amp;showinfo=0"
-                  title="Project video"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
-        <p class="is-size-7 has-text-grey">Replace <code>VIDEO_ID</code> in <code>index.html</code> with your YouTube video ID.</p>
       </div>
     </div>
   </div>
 </section>
 
 
-<section class="section">
-  <div class="container is-max-desktop">
+<section class="section" id="discussion">
+  <div class="container is-max-widescreen">
     <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Additional results</h2>
-        <div class="content has-text-justified">
-          <p>
-            Use this section for extra figures or videos. Put files under <code>static/videos/</code> and
-            update the paths below. Duplicate or remove blocks as you like.
-          </p>
-        </div>
-        <div class="content has-text-centered">
-          <video id="extra-result"
-                 controls
-                 muted
-                 preload
-                 playsinline
-                 width="75%">
-            <source src="./static/videos/extra.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
+      <div class="column is-12 content has-text-justified">
+        <h2 class="title is-3 has-text-centered">Discussion</h2>
+        <p>
+          We propose a Lagrangian approach to behavior forecasting by representing motion as dense point trajectories. Unlike standard Eulerian video generation models that predict color changes on a fixed pixel grid, our method explicitly tracks the movement of physical surface points over time. This distinction allows our model to disentangle complex object dynamics from appearance and lighting, providing a structured mid-level representation that is significantly more data-efficient and generalizes across diverse non-rigid agents. <br>
+        </p>
       </div>
     </div>
+  </div>
+</section>
 
+
+<section class="section" id="related-work">
+  <div class="container is-max-widescreen">
     <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Related work</h2>
-        <div class="content has-text-justified">
+      <div class="column is-12 content">
+        <h2 class="title is-3 has-text-centered">Related work</h2>
+        <div class="has-text-justified" style="margin-bottom: 1rem;">
           <p>
-            Add links to related papers or project pages here.
+            Here are a few papers that inspired us. They also forecast point tracks, mostly focusing on robotics applications. See more related work in our paper.
           </p>
         </div>
+        <ul class="related-work-list has-text-justified">
+          <li>
+            <a href="https://what-happens-next.gabrijel-boduljak.com/" target="_blank" rel="noopener">Bharadhwaj et al.</a>,
+            <em>What Happens Next? Anticipating Future Motion by Generating Point Trajectories</em>.
+            ICLR 2026.
+          </li>
+          <li>
+            <a href="https://homangab.github.io/track2act/" target="_blank" rel="noopener">Boduljak et al.</a>,
+            <em>Track2Act: Predicting Point Tracks from Internet Videos enables Generalizable Robot Manipulation</em>.
+            ECCV 2024.
+          </li>
+          <li>
+            <a href="https://xingyu-lin.github.io/atm/" target="_blank" rel="noopener">Wen et al.</a>,
+            <em>Any-point Trajectory Modeling for Policy Learning</em>.
+            arxiv 2023.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section" id="acknowledgments">
+  <div class="container is-max-widescreen">
+    <div class="columns is-centered">
+      <div class="column is-12 content has-text-justified">
+        <h2 class="title is-3 has-text-centered">Acknowledgments</h2>
+        <p>
+          We thank Noah Snavely for challenging us with general motion forecasting over a lovely Parisian lunch. We thank 
+Andrew Zisserman,
+Drew Purves,
+Aleksander Holynski,
+Linyi Jin,
+Sander Dieleman,
+Mark Hamilton,
+and Jathushan Rajasegeran
+for helpful discussions and feedback. This work was supported by ONR MURI N00014-21-1-280, and a NSF Graduate Fellowship to NT.
+        </p>
       </div>
     </div>
   </div>
@@ -236,16 +619,16 @@
 
 
 <section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
+  <div class="container is-max-widescreen content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{yourkey2026motion,
-  author    = {Author, First and Author, Second},
-  title     = {Your Paper Title},
-  journal   = {Conference or Journal},
-  year      = {2026},
+    <pre><code>@article{thakkar2026forecasting,
+  author  = {Thakkar, Neerja and Ginosar, Shiry and Walker, Jacob C and Malik, Jitendra and Carreira, Jo{\~a}o and Doersch, Carl},
+  title   = {Forecasting Motion in the Wild},
+  journal = {arXiv preprint arXiv:XXXX.XXXXX},
+  year    = {2026},
 }</code></pre>
   </div>
-</section>
+</section>  
 
 
 <footer class="footer">
@@ -264,8 +647,7 @@
             Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>
           <p>
-            Site template adapted from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>
-            (please retain attribution as in their license).
+            Site template adapted from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
           </p>
         </div>
       </div>
