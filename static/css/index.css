@@ -7,9 +7,18 @@ body {
     color: #000;
 }
 
-.link-block a {
-    margin-top: 5px;
-    margin-bottom: 5px;
+.publication-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.35rem 0.5rem;
+}
+
+.publication-links .link-block .button {
+  margin-top: 0;
+  margin-bottom: 0;
+  vertical-align: middle;
 }
 
 .dnerf {
@@ -106,4 +115,9 @@ body {
 
 .related-work-list li {
   margin-bottom: 0.65rem;
+}
+
+/* Slight gap between section heading and blurb (Bulma pulls title+subtitle tight by default) */
+h2.title.is-3.has-text-centered + p.subtitle.section-prose-wide {
+  margin-top: 0.75rem;
 }
